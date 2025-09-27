@@ -1,9 +1,13 @@
-import example.pepita
 
-describe "group of tests for pepita" {
+import armas.*
+import elementos.*
+import jugadoresPersonajes.*
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+
+describe "test general" {
+  test "luisa usa a floki, encuentra a aurora, la ataca y esta muere" {
+    luisa.personajeActivo(floki)
+    luisa.aparece(aurora)
+    assert.notThat(aurora.estaViva())
   }
-
 }

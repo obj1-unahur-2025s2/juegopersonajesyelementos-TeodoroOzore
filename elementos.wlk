@@ -4,6 +4,10 @@ object castillo {
   method recibirAtaque(potencia) {
     defensa = 0.max(defensa - potencia)
   }
+  method recibirTrabajo(){
+    defensa = 200.min(defensa + 20)
+  }
+  method valorARecolectar() = defensa / 5
 }
 
 object aurora {
@@ -14,13 +18,17 @@ object aurora {
         estaViva = false
     }
   }
+  method estaViva() = estaViva
+  method recibirTrabajo() {}
+  method valorARecolectar() = 15
 }
 
 object tipa {
   var altura = 8
   method altura() = altura
-  method crecer() {
+  method recibirAtaque(potencia) {}
+  method recibirTrabajo() {
     altura = altura + 1
   }
-  method recibirAtaque(potencia) {}
+  method valorARecolectar() = altura * 2
 }
